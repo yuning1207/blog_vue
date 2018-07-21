@@ -43,7 +43,7 @@ export default {
 a {
     cursor: pointer;
 }
-.el-menu-item {
+.el-menu .el-menu-item {
     font-size: 18px;
     display: inline-block;
 }
