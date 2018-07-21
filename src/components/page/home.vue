@@ -10,7 +10,7 @@
                 <div id="wait">等待中...</div>
                 <el-row class="article" v-for="item in datalist" :key="item.id">
                     <el-col :span="6" class="img">
-                        <img :src="+item.picture" :alt="item.title">
+                        <img :src="item.picture" :alt="item.title">
                     </el-col>
                     <el-col :span="17" class="con">
                         <div class="a_title">
