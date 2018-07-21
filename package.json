@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "element-ui": "^2.4.1",
+    "element-ui": "^2.4.4",
     "font-awesome": "^4.7.0",
     "jquery": "^2.2.3",
     "marked": "^0.4.0",
