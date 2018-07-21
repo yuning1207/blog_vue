@@ -162,7 +162,7 @@ export default {
     },
     methods: {
         get: function() {
-            let url = "/api/Blog/note";
+            let url = "/Blog/note";
             axios
                 .get(url)
                 .then(res => {

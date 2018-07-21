@@ -28,15 +28,15 @@ const actions = {
     let val0 = val.split(",");
     if (val0[1]) {
       if (val0[0] > 1) {
-        var url = '/api/Blog/wiki/listAll/' + val0[0] + '?mark=' + val0[1]
+        var url = '/Blog/wiki/listAll/' + val0[0] + '?mark=' + val0[1]
       } else {
-        url = '/api/Blog/wiki/listAll/1' + '?mark=' + val0[1];
+        url = '/Blog/wiki/listAll/1' + '?mark=' + val0[1];
       }
     } else {
       if (val0[0] > 1) {
-        var url = '/api/Blog/wiki/listAll/' + val0[0];
+        var url = '/Blog/wiki/listAll/' + val0[0];
       } else {
-        url = '/api/Blog/wiki/listAll/1';
+        url = '/Blog/wiki/listAll/1';
       }
     }
 
@@ -55,7 +55,7 @@ const actions = {
     }
 
     function gethot() {
-      return axios.get('/api/Blog/wiki/listHot').then(res => {
+      return axios.get('/Blog/wiki/listHot').then(res => {
         if (res.data.status == 0) {
           context.commit('sethot', res.data);
         }

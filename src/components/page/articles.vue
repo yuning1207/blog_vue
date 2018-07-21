@@ -12,7 +12,7 @@
                 <div id="wait">等待中...</div>
                 <el-row class="articles" v-for="item in datalist" :key="item.id">
                     <el-col :span="6" class="img">
-                        <img :src="'/api'+item.picture" :alt="item.title">
+                        <img :src="+item.picture" :alt="item.title">
                     </el-col>
                     <el-col :span="17" class="con">
                         <div class="a_title">
@@ -131,7 +131,7 @@ export default {
     },
     created: function() {
         axios
-            .get("/api//Blog/wiki/cateGory")
+            .get("/Blog/wiki/cateGory")
             .then(response => {
                 if (response.data.status == 0) {
                     this.guide = response.data.data;

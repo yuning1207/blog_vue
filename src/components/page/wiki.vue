@@ -26,7 +26,7 @@ export default {
     methods: {
         get() {
             let id = this.$route.params.wikid;
-            let url = "/api/Blog/wiki/getWiki/" + id;
+            let url = "/Blog/wiki/getWiki/" + id;
             axios
                 .get(url)
                 .then(res => {

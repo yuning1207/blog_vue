@@ -105,7 +105,7 @@
 </template>
 
 <script>
-const url = "/api/Blog/message";
+const url = "/Blog/message";
 import axios from "axios";
 import Vue from "vue";
 export default {
