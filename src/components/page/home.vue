@@ -276,7 +276,7 @@ export default {
 .a_foot i {
     margin-right: 7px;
 }
-.el-pagination {
+.el-col .el-pagination {
     padding: 15px 0 30px 0;
     display: none;
 }
