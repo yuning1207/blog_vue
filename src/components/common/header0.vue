@@ -52,7 +52,7 @@ a {
     text-align: right;
     padding-right: 20px;
 }
-.el-menu--horizontal > .el-menu-item {
+.header .el-menu--horizontal > .el-menu-item {
     float: none;
     height: auto;
     line-height: 25px;

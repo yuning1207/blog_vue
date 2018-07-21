@@ -173,7 +173,7 @@ export default {
     margin-top: 12%;
 }
 .el-carousel,
-.el-carousel__container {
+.el-carousel .el-carousel__container {
     height: 65vh;
 }
 .el-carousel__item:nth-child(2n) {
