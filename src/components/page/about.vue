@@ -27,7 +27,7 @@
                 <el-col :xs="24" :sm="12" :md="12" class="author_info">
                     <img src="../../../static/img/head.jpg">
                     <p>RenLuXiang</p>
-                    <p>本人是一枚90后程序员，web前端工程师，主攻HTML + CSS + JavaScript + Vue</p>
+                    <p>本人是一枚90后程序员，Java后台工程师，主攻Java + SSM + SpringBoot + MySql</p>
                     <p class="ab_add">
                         <i class="fa fa-location-arrow"></i> 陕西 - 西安</p>
                 </el-col>
@@ -48,36 +48,30 @@
                 <div class="c_img"></div>
                 <ul>
                     <li>
-                        <p>小李Blog</p>
-                        <p>www.jhnsa.cn</p>
+                        <a href="http://www.xiyou.edu.cn">
+                            西安邮电大学
+                        </a>
                     </li>
                     <li>
-                        <p>小李Blog</p>
-                        <p>www.jhnsa.cn</p>
+                        <a href="http://renluxiang.cn">任鲁翔的个人博客</a>
                     </li>
                     <li>
-                        <p>小李Blog</p>
-                        <p>www.jhnsa.cn</p>
+                        <a href="http://www.ruanyifeng.com">阮一峰的个人网站</a>
                     </li>
                     <li>
-                        <p>小李Blog</p>
-                        <p>www.jhnsayuning.cn</p>
+                        <a href="https://www.zhangxinxu.com">张鑫旭</a>
                     </li>
                     <li>
-                        <p>小李Blog</p>
-                        <p>www.jhnsa.cn</p>
+                        <a href="http://www.leo96.com">不落阁</a>
                     </li>
                     <li>
-                        <p>小李Blog</p>
-                        <p>www.jhnsayuning.cn</p>
+                        <a href="http://jspang.com">技术胖博客</a>
                     </li>
                     <li>
-                        <p>小李Blog</p>
-                        <p>www.jhnsa.cn</p>
+                        <a href="https://github.com/yuning1207">Github</a>
                     </li>
                     <li>
-                        <p>小李Blog</p>
-                        <p>www.jhnsayuning.cn</p>
+                        <a href="https://blog.csdn.net/new_life1207">CSDN博客</a>
                     </li>
                 </ul>
             </div>
@@ -112,10 +106,8 @@ export default {
     name: "about",
     data() {
         return {
-            // count: 1,
             textarea: "",
             text: []
-            // newtext: []
         };
     },
     mounted: function() {
@@ -152,6 +144,41 @@ export default {
         global.link3 = $("#con_head a").eq(2);
         global.link4 = $("#con_head a").eq(3);
         global.c_head = $(".c_head");
+        let timer;
+        // timer = setInterval(() => {
+        //
+        // }, 100);
+        window.addEventListener("scroll", function() {
+            let top =
+                document.documentElement.scrollTop || document.body.scrollTop;
+            if (top <= c_head[1].offsetTop) {
+                link1.addClass("active");
+                link2.removeClass("active");
+                link3.removeClass("active");
+                link4.removeClass("active");
+            } else if (
+                top <= c_head[2].offsetTop &&
+                top >= c_head[1].offsetTop
+            ) {
+                link2.addClass("active");
+                link1.removeClass("active");
+                link3.removeClass("active");
+                link4.removeClass("active");
+            } else if (
+                top <= c_head[3].offsetTop &&
+                top >= c_head[2].offsetTop
+            ) {
+                link3.addClass("active");
+                link1.removeClass("active");
+                link2.removeClass("active");
+                link4.removeClass("active");
+            } else {
+                link4.addClass("active");
+                link1.removeClass("active");
+                link3.removeClass("active");
+                link2.removeClass("active");
+            }
+        });
     },
     created: function() {
         this.get();
@@ -382,12 +409,17 @@ p {
     padding: 10px 20px;
     margin: 10px;
     border: 1px solid #eee;
+    height: 20px;
 }
 #con_friend ul li:hover {
     border: 1px solid #1e9fff;
 }
 #con_friend ul {
     overflow: hidden;
+}
+#con_friend ul li a {
+    text-decoration: none;
+    color: #2c3e50;
 }
 #con_talk {
     overflow: hidden;
