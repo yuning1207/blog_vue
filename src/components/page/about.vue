@@ -164,28 +164,28 @@ export default {
                     width: "85vw"
                 });
             }
-            if (top <= c_head[1].offsetTop) {
+            if (top <= c_head[1].offsetTop - 50) {
                 link1.addClass("active");
                 link2.removeClass("active");
                 link3.removeClass("active");
                 link4.removeClass("active");
             } else if (
-                top <= c_head[2].offsetTop &&
-                top >= c_head[1].offsetTop
+                top <= c_head[2].offsetTop - 50 &&
+                top >= c_head[1].offsetTop - 50
             ) {
                 link2.addClass("active");
                 link1.removeClass("active");
                 link3.removeClass("active");
                 link4.removeClass("active");
             } else if (
-                top <= c_head[3].offsetTop &&
-                top >= c_head[2].offsetTop
+                top <= c_head[3].offsetTop - 50 &&
+                top >= c_head[2].offsetTop - 50
             ) {
                 link3.addClass("active");
                 link1.removeClass("active");
                 link2.removeClass("active");
                 link4.removeClass("active");
-            } else {
+            } else if (top >= c_head[3].offsetTop - 50) {
                 link4.addClass("active");
                 link1.removeClass("active");
                 link3.removeClass("active");
@@ -472,6 +472,15 @@ p {
 #talk_con div p:nth-of-type(2) span {
     color: #0094ff;
     padding-right: 10px;
+}
+@media screen and (max-width: 426px) {
+    #con_head a {
+        padding: 5px;
+        font-size: 14px;
+    }
+    .con_pre p {
+        font-size: 14px;
+    }
 }
 </style>
 

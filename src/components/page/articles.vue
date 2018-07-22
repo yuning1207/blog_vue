@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="rows">
-                    <div id="auther_tell" class="col-xs-6 col-md-12">
+                    <div id="auther_tell">
                         <p class="right_head">作者推荐</p>
                         <hr>
                         <p v-for="item in listhot" :key="item.id">
@@ -396,6 +396,9 @@ hr {
 }
 #auther_tell {
     text-align: left;
+}
+#auther_tell p:nth-of-type(2) {
+    margin-bottom: 5px;
 }
 #auther_tell i {
     color: #009688;

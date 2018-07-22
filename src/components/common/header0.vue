@@ -46,7 +46,6 @@ a {
     display: inline-block;
 }
 .el-menu {
-    /* background-color: #393d49; */
     text-align: right;
     padding-right: 20px;
 }
@@ -66,7 +65,7 @@ a {
     letter-spacing: 2px;
 }
 @media screen and (max-width: 426px) {
-    .el-menu--horizontal > .el-menu-item {
+    .header .el-menu--horizontal > .el-menu-item {
         font-size: 14px;
         padding: 5px;
     }
@@ -79,7 +78,7 @@ a {
     }
 }
 @media screen and (max-width: 376px) {
-    .el-menu--horizontal > .el-menu-item {
+    .header .el-menu--horizontal > .el-menu-item {
         font-size: 12px;
         padding: 3px;
     }
