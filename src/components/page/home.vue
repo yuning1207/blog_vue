@@ -81,11 +81,14 @@
                 <div id="index_friend">
                     <p class="right_head ">友情链接</p>
                     <hr>
-                    <a>西安邮电大学</a>
-                    <a>PTA</a>
-                    <a>前端网</a>
-                    <a>SegmentFault</a>
-                    <a>慕课网</a>
+                    <a href="http://www.xiyou.edu.cn">西安邮电大学</a>
+                    <a href="http://renluxiang.cn">任鲁翔的个人博客</a>
+                    <a href="http://www.ruanyifeng.com">阮一峰的个人网站</a>
+                    <a href="https://www.zhangxinxu.com">张鑫旭</a>
+                    <a href="http://www.leo96.com">不落阁</a>
+                    <a href="http://jspang.com">技术胖博客</a>
+                    <a href="https://github.com/yuning1207">Github</a>
+                    <a href="https://blog.csdn.net/new_life1207">CSDN博客</a>
                 </div>
                 <div style="clear:both "></div>
             </el-col>
@@ -158,7 +161,6 @@ export default {
             this.$store.dispatch("setMutation", val);
         },
         getwiki(id) {
-            console.log("home id: " + id);
             this.$router.push({ name: "wiki", params: { wikid: id } });
         }
     }
@@ -395,6 +397,7 @@ export default {
 
 #index_friend a {
     margin-right: 20px;
+    line-height: 25px;
 }
 
 @media screen and (max-width: 769px) {

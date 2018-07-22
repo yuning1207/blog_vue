@@ -20,9 +20,7 @@ export default {
         };
     },
     methods: {
-        handleSelect(key, keyPath) {
-            // console.log(key, keyPath);
-        },
+        handleSelect(key, keyPath) {},
         gohome() {
             this.$router.push("/");
         },

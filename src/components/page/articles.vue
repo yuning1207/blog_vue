@@ -182,7 +182,6 @@ export default {
             this.$store.dispatch("setMutation", val);
         },
         getwiki(id) {
-            console.log("home id: " + id);
             this.$router.push({ name: "wiki", params: { wikid: id } });
         }
     },

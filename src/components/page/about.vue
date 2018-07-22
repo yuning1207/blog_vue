@@ -144,13 +144,26 @@ export default {
         global.link3 = $("#con_head a").eq(2);
         global.link4 = $("#con_head a").eq(3);
         global.c_head = $(".c_head");
+        global.con_c = $("#con_c")[0];
         let timer;
-        // timer = setInterval(() => {
-        //
-        // }, 100);
         window.addEventListener("scroll", function() {
             let top =
                 document.documentElement.scrollTop || document.body.scrollTop;
+            if (top >= con_c.offsetTop - 54) {
+                $("#con_head").css({
+                    position: "fixed",
+                    "margin-top": 0,
+                    width: "100vw"
+                });
+            } else {
+                $("#con_head").css({
+                    position: "sticky",
+                    position: "-webkit-sticky",
+                    position: "static",
+                    "margin-top": "15px",
+                    width: "85vw"
+                });
+            }
             if (top <= c_head[1].offsetTop) {
                 link1.addClass("active");
                 link2.removeClass("active");
@@ -188,11 +201,9 @@ export default {
             axios
                 .get(url)
                 .then(res => {
-                    console.log("get success");
                     if (res.status == 200) {
                         res.data.data.reverse();
                         this.text = res.data.data;
-                        console.log(this.text);
                     }
                 })
                 .catch(err => {
@@ -201,7 +212,6 @@ export default {
                 });
         },
         talk_commit: function() {
-            console.log(this.textarea);
             let params = new URLSearchParams();
             params.append("content", this.textarea);
             axios.post(url, params).then(res => {
@@ -209,11 +219,9 @@ export default {
                     axios
                         .get(url)
                         .then(res => {
-                            console.log("get success");
                             if (res.status == 200) {
                                 res.data.data.reverse();
                                 this.text = res.data.data;
-                                console.log(this.text);
                             }
                         })
                         .catch(err => {
@@ -246,7 +254,6 @@ export default {
                 ) {
                     timer = clearInterval(timer);
                 }
-                console.log(top2);
             }, 30);
         },
         author() {
@@ -255,7 +262,6 @@ export default {
             link3.removeClass("active");
             link4.removeClass("active");
             let author_c = c_head[0].offsetTop;
-            console.log("author offset: " + author_c);
             this.$options.methods.scroll(author_c);
         },
         net() {
